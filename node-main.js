@@ -49,17 +49,20 @@ async function main() {
     
 
     // Just some logging
-    const rewardCallback = (reward, player, pickup) => {
-        console.log("Rewarded", reward,"to",player.name);
-    };
-
+    // const rewardCallback = (reward, player, pickup) => {
+    //     console.log("Rewarded", reward,"to",player.name);
+    // };
+    const rewardCallback=null;
+    
+    console.info("Start!");
+    
     // Run logic
     let lastSave=0;
     while(true){
         const t=Date.now();
         if(t-lastSave>1000*60){   // Serialize every 1 minute
             lastSave=t;
-            console.log("Save");
+            // console.log("Save");
             const data = gameLogic.serialize();
             Fs.writeFileSync(model, data);
         }
