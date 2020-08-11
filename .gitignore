@@ -1,3 +1,4 @@
 node_modules
 reinforcejs/*
 !reinforcejs/lib
+!reinforcejs/README.md
