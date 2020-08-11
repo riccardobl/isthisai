@@ -1,0 +1,24 @@
+{
+  "name": "testai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node-main.js",
+  "dependencies": {
+    "victor": "^1.1.0",
+    "yargs": "^15.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riccardobl/isthisai.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/riccardobl/isthisai/issues"
+  },
+  "homepage": "https://github.com/riccardobl/isthisai#readme"
+}
