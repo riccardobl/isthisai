@@ -12,7 +12,7 @@ mkdir -p /srv/training1
 docker run \
 --restart=always \
 -v/srv/training1:/model  \
---name=training1 \
+--name=espresso1 \
 --read-only \
 -d isthisai 
 ```

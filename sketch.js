@@ -16,8 +16,8 @@ const RenderSettings={
 }
 
 const PretrainedModels = [
-    "https://training1.frk.wf/training1.json?time="+Date.now(),
-    "training1.json"
+    "https://training1.frk.wf/espresso1.json?time="+Date.now(),
+    "espresso1.json?time="+Date.now()
 ];
 
 

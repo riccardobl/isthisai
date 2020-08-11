@@ -5,23 +5,22 @@ if (typeof module !== "undefined") {
 
 }
 
-
 const Rewards = {
-    poison: -2.0,
+    poison: -1.0,
     food: 1.0,
-    wandering: -0.001
+    wandering: -0.01
 }
 
 const Settings = {
-    version: "3",
+    version: "4",
 
     async: true,
     playerSize: 0.12,
     pickupSize: 0.07,
     nPickups: 4,
 
-    rotationSpeed: 12,
-    velocity: [0, 1.2]
+    rotationSpeed: 6.0,
+    velocity: [0, .5]
 }
 
 class Entity {
@@ -123,6 +122,11 @@ class Chicken extends Player {
 }
 
 class Logic {
+    simplify(x,n){
+        const f=10.*n;
+        return Math.floor(x*f)/f;
+    };
+    
     constructor() {
         this.pickupsTypes = [Food, Poison];
         this.players = [];
@@ -191,14 +195,11 @@ class Logic {
         for (let i in this.pickups) {
             const p2p = this.pickups[i].pos.clone().subtract(player.pos);
 
-            const simplify=(x,n)=>{
-                const f=10.*n;
-                return Math.floor(x*f)/f;
-            };
+  
 
-            v.push(simplify(player.getForward().dot(p2p),1));
+            v.push(this.simplify(player.getForward().dot(p2p),1));
             v.push(this.pickups[i].value);
-            v.push(simplify(this.pickups[i].pos.distance(player.pos),2.));
+            v.push(this.simplify(this.pickups[i].pos.distance(player.pos),2.));
             // console.log(v);
         }
 

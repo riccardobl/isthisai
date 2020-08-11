@@ -9,10 +9,10 @@ WORKDIR /app
 COPY package*.json  /app/
 COPY node-main.js  /app/
 COPY logic.js  /app/
-COPY training1.json  /app/pretrained.json
+COPY espresso1.json  /app/pretrained.json
 COPY reinforcejs  /app/reinforcejs
 
 RUN cd /app&&npm ci --only=production
 
 
-CMD [ "node", "/app/node-main.js","--model","/model/training1.json","--pretrained","/app/pretrained.json" ]
+CMD [ "node", "/app/node-main.js","--model","/model/espresso1.json","--pretrained","/app/pretrained.json" ]

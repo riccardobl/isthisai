@@ -19,7 +19,7 @@ async function main() {
     .help()
     .argv;
 
-    let model = Path.join(__dirname, "training1.json");
+    let model = Path.join(__dirname, "espresso1.json");
     if (argv.model) model = argv.model;
 
     let pretrained = null;
